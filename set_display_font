@@ -1,0 +1,23 @@
+算子：set_display_font( : : WindowHandle, Size, Font, Bold, Slant : )
+
+功能：用来设置当前窗口的字体属性。
+
+输入参数：WindowHandle：将要设置字体的窗口的窗口句柄                                                                                                             
+
+Size：Windows系统上的字体大小。 如果Size = -1，则使用默认值16。 在Linux系统上，所有值都乘以1.25，然后映射到[11、14、17、20、25、34]。建议值: [9, 11, 14, 16, 20, 27]。                                                                 
+
+Font：字体名称。 可以使用'mono'，'sans'，'serif'或特定的字体名称。 在Windows上，“mono”将被映射到“Courier New字体”，在Linux上将被映射到“courier字体”，在OS X上将被映射到“Menlo字体”。在Windows和OS X上，“sans”将被映射到“Arial字体”，以及“helvetica字体”在Linux上。 在Windows和OS X上，“serif”将映射到“Times New Roman字体”，并映射到“times字体”在Linux上。默认值“mono”                                                              
+
+Bold：如果设置为“true”，则使用粗体。默认值为“true”。
+
+Slant：如果设置为“ true”，则使用倾斜字体。默认值为“true”。
+
+输出参数： WindowHandle：新图形窗口的窗口句柄。
+
+例程： 
+
+dev_open_window_fit_image(Image,0 , 0, 400, 400, WindowHandle)
+
+//设置窗口的字体，16号字，Courier New字体，粗体
+
+set_display_font(WindowHandle, 16, 'mono', 'true', 'false')
